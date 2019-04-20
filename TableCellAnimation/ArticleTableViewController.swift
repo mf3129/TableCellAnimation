@@ -60,7 +60,7 @@ class ArticleTableViewController: UITableViewController {
         
         //Defining the initial state
         let rotationAngleInRadians = 90.0 * CGFloat(Double.pi/180.0)
-        let rotationTransform = CATransform3DMakeRotation(rotationAngleInRadians, 0, 0, 1)
+        let rotationTransform = CATransform3DMakeRotation(rotationAngleInRadians, -500, 100, 0)
         cell.layer.transform = rotationTransform
         
         //Final State
