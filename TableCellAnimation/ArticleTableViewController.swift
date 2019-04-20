@@ -58,14 +58,21 @@ class ArticleTableViewController: UITableViewController {
 //        //Transparant before animation
 //        cell.alpha = 0
         
-        //Defining the initial state
-        let rotationAngleInRadians = 90.0 * CGFloat(Double.pi/180.0)
-        let rotationTransform = CATransform3DMakeRotation(rotationAngleInRadians, -500, 100, 0)
-        cell.layer.transform = rotationTransform
-        
-        //Final State
-        UIView.animate(withDuration: 1.0) {
-            cell.layer.transform = CATransform3DIdentity
+        if indexPath.row == 0 {
+            //Defining the initial state
+            let rotationAngleInRadians = 90.0 * CGFloat(Double.pi/180.0)
+            let rotationTransform = CATransform3DMakeRotation(rotationAngleInRadians, -500, 100, 0)
+            cell.layer.transform = rotationTransform
+            
+            //Final State
+            UIView.animate(withDuration: 1.0) {
+                cell.layer.transform = CATransform3DIdentity
+            }
+        } else {
+            cell.alpha = 0
+            UIView.animate(withDuration: 1.0) {
+                cell.alpha = 1
+            }
         }
         
 //        UIView.animate(withDuration: 1.0) {
